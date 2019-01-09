@@ -1,7 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>LinqPagination</PackageId>
+    <Version>1.1.0</Version>
+    <Authors>SevenQi</Authors>
+    <Description>Linq 分页扩展库,简单易用</Description>
+    <Copyright>Copyright © SevenQi 2019</Copyright>
+    <PackageProjectUrl>https://github.com/SenvenQi/LinqPagination</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SenvenQi/LinqPagination.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RootNamespace>LinqPagination</RootNamespace>
+    <AssemblyName>LinqPagination</AssemblyName>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageTags>linq分页扩展</PackageTags>
+    <PackageIconUrl>https://www.easyicon.net/api/resizeApi.php?id=1168280&amp;size=128</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/SenvenQi/LinqPagination/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageReleaseNotes />
   </PropertyGroup>
-
 </Project>
