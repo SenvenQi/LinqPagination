@@ -1,0 +1,17 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs/FunctionExtention/v15
+/FunctionExtention/obj
+/.vs
+*.user
+/FunctionExtentionTest/obj
+/FunctionExtentionTest/bin/Debug/netcoreapp2.1
+/FunctionExtention/bin/Debug/netstandard2.0
+/LinqPagination/obj/Debug/netstandard2.0
+/LinqPaginationTest/obj/Debug/netcoreapp2.1
+/LinqPagination/obj
+/LinqPaginationTest/obj
+/LinqPagination/bin/Debug/netstandard2.0
+/LinqPaginationTest/bin/Debug/netcoreapp2.1
