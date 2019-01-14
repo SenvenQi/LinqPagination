@@ -8,15 +8,13 @@
 **使用前请using LinqPagination;**
 返回分页后的查询结果IQueryable\<T>
  * linq分页扩展
-     > **返回IQueryable\<T> IQueryable\<T>.Pagination(pageIndex,pageSize)**
- * linq分页扩展可添加数据源过滤条件
-     > **返回IQueryable\<T> IQueryable\<T>.Pagination(pageIndex,pageSize,param Expression<Func<T, bool>\> @where)**
+      > **IQueryable<T> datas = new List<T>().AsQueryable();**
+        **IQueryable<T> result = datas.Pagination(pageIndex,pageSize);**
 
 返回分页后的PageResult\<T>
  * linq分页扩展
-    > **返回PageResult\<T> IQueryable\<T>.PaginationToResult(pageIndex,pageSize)**
- * linq分页扩展可添加数据源过滤条件
-    > **返回PageResult\<T> IQueryable\<T>.PaginationToResult(pageIndex,pageSize,param Expression\<Func\<T, bool>> @where)**
+    > **IQueryable<T> datas = new List<T>().AsQueryable();**
+      **IQueryable<T> result = datas.Pagination(pageIndex,pageSize);**
 
 返回结果PageResult\<T>
   * 数据源总条数
