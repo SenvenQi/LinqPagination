@@ -9,7 +9,7 @@
 返回分页后的查询结果IQueryable\<T>
  * linq分页扩展
       > **IQueryable<T> datas = new List<T>().AsQueryable();**
-        **IQueryable<T> result = datas.Pagination(pageIndex,pageSize);**
+      > **IQueryable<T> result = datas.Pagination(pageIndex,pageSize);**
 
 返回分页后的PageResult\<T>
  * linq分页扩展
