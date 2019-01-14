@@ -8,12 +8,12 @@
 **使用前请using LinqPagination;**
 返回分页后的查询结果IQueryable\<T>
  * linq分页扩展
-      > **IQueryable<T> datas = new List<T>().AsQueryable();**
+      > **IQueryable<T> datas = new List<T>().AsQueryable();**<br/>
       > **IQueryable<T> result = datas.Pagination(pageIndex,pageSize);**
 
 返回分页后的PageResult\<T>
  * linq分页扩展
-    > **IQueryable<T> datas = new List<T>().AsQueryable();**
+    > **IQueryable<T> datas = new List<T>().AsQueryable();**<br/>
       **IQueryable<T> result = datas.Pagination(pageIndex,pageSize);**
 
 返回结果PageResult\<T>
