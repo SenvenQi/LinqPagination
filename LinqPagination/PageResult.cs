@@ -13,12 +13,12 @@ namespace LinqPagination
         {
             SourceCount = sourceCount;
             PageCount = pageCount;
-            Results = results;
+            Results = results.ToList();
         }
         public int SourceCount { get; }
 
         public int PageCount { get;}
 
-        public IQueryable<T> Results { get; }
+        public IList<T> Results { get; }
     }
 }

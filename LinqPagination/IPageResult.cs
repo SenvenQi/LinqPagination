@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace LinqPagination
 {
@@ -19,6 +20,6 @@ namespace LinqPagination
         /// <summary>
         /// 分页结果集
         /// </summary>
-        IQueryable<T> Results { get; }
+        IList<T> Results { get; }
     }
 }
