@@ -14,7 +14,7 @@ namespace LinqPagination
         /// <param name="pageIndex">页码</param>
         /// <param name="pageSize">每页大小</param>
         /// <returns>分页结果集</returns>
-        public static IQueryable<T> Pagination<T>(this IQueryable<T> me, int pageIndex = 1, int pageSize = 50)
+        public static IQueryable<T> Pagination<T>(this IQueryable<T> me, int pageIndex = 1, int pageSize = 10)
             => GetPaging<T>(pageIndex, pageSize).PagingBy(me);
         /// <summary>
         /// 分页默认方法第一页,每页50条数据
@@ -33,7 +33,7 @@ namespace LinqPagination
         /// <param name="pageSize">每页大小</param>
         /// <param name="conditions">过滤表达式集合</param>
         /// <returns>分页结果集</returns>
-        public static IQueryable<T> Pagination<T>(this IQueryable<T> me, int pageIndex = 1, int pageSize = 50, params Expression<Func<T, bool>>[] conditions)
+        public static IQueryable<T> Pagination<T>(this IQueryable<T> me, int pageIndex = 1, int pageSize = 10, params Expression<Func<T, bool>>[] conditions)
         {
             var paging = GetPaging<T>(pageIndex, pageSize);
             paging.Conditions = conditions.ToList();
@@ -61,14 +61,15 @@ namespace LinqPagination
         /// <param name="pageSize">每页大小</param>
         /// <param name="conditions">过滤表达式集合</param>
         /// <returns>PageResult<T></returns>
-        public static PageResult<T> PaginationToResult<T>(this IQueryable<T> me, int pageIndex = 1, int pageSize = 50, params Expression<Func<T, bool>>[] conditions)
+        public static PageResult<T> PaginationToResult<T>(this IQueryable<T> me, int pageIndex = 1, int pageSize = 10, params Expression<Func<T, bool>>[] conditions)
         {
             var paging = GetPaging<T>(pageIndex, pageSize);
             paging.Conditions = conditions.ToList();
             var results = paging.PagingBy(me);
             return PageResult<T>.New(paging.AvailCnt, 
                 paging.AvailCnt % paging.PageSize == 0 ? paging.AvailCnt / paging.PageSize : paging.AvailCnt / paging.PageSize + 1,
-                results);
+                paging.PageIndex,
+                results.ToList());
         }
         /// <summary>
         /// 分页默认方法第一页,每页50条数据 可添加过滤表达式集合
@@ -84,7 +85,8 @@ namespace LinqPagination
             var results = paging.PagingBy(me);
             return PageResult<T>.New(paging.AvailCnt, 
                 paging.AvailCnt % paging.PageSize == 0 ? paging.AvailCnt / paging.PageSize : paging.AvailCnt / paging.PageSize + 1,
-                results);
+                paging.PageIndex,
+                results.ToList());
         }
         /// <summary>
         /// Paging<T>工厂方法动态获取Paging<T>

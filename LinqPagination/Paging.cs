@@ -8,8 +8,8 @@ namespace LinqPagination
     public abstract class Paging<T> : IPaging<T>
     {
         public virtual int PageIndex { get; set; } = 1;
-        public virtual int PageSize { get; set; } = 50;
-        public virtual int AvailCnt => _source.Count();
+        public virtual int PageSize { get; set; } = 10;
+        public virtual int AvailCnt { get; set; }
         public virtual IList<Expression<Func<T, bool>>> Conditions { get; set; } = new List<Expression<Func<T, bool>>>();
 
         private IQueryable<T> _source;
@@ -22,6 +22,7 @@ namespace LinqPagination
         IQueryable<T> IPaging<T>.PagingBy(IQueryable<T> source)
         {
             _source = source;
+            AvailCnt = _source.Count();
             AddFliter(Self);
             Pagination();
             return _source;

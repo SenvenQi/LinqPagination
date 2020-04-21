@@ -13,6 +13,6 @@
         /// <summary>
         /// 数据源总条数
         /// </summary>
-        int AvailCnt { get; }
+        int AvailCnt { get; set; }
     }
 }

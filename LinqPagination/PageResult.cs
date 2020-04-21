@@ -1,24 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace LinqPagination
 {
     public class PageResult<T> : IPageResult<T>
     {
-        public static PageResult<T> New(int sourceCount, int pageCount, IQueryable<T> results)
-            => new PageResult<T>(sourceCount, pageCount, results);
-        private PageResult(int sourceCount,int pageCount, IQueryable<T> results)
+        public static PageResult<T> New(int sourceCount, int pageCount, int pageIndex, IList<T> results)
+            => new PageResult<T>(sourceCount, pageCount, pageIndex, results);
+
+        private PageResult(int sourceCount,int pageCount,int pageIndex, IList<T> results)
         {
             SourceCount = sourceCount;
             PageCount = pageCount;
-            Results = results.ToList();
+            Results = results;
+            PageIndex = pageIndex;
         }
-        public int SourceCount { get; }
+        public PageResult()
+        {
 
-        public int PageCount { get;}
+        }
+        public int PageIndex { get; set; }
 
-        public IList<T> Results { get; }
+        public int SourceCount { get; set; }
+
+        public int PageCount { get; set; }
+
+        public IList<T> Results { get; set; }
     }
 }

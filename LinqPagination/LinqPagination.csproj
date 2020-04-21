@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>LinqPagination</PackageId>
-    <Version>1.1.1</Version>
+    <Version>2.1.1</Version>
     <Authors>SevenQi</Authors>
     <Description>Linq 分页扩展库,简单易用</Description>
     <Copyright>Copyright © SevenQi 2019</Copyright>
@@ -17,5 +17,6 @@
     <PackageIconUrl>https://www.easyicon.net/api/resizeApi.php?id=1168280&amp;size=128</PackageIconUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/SenvenQi/LinqPagination/master/LinqPagination/LICENSE</PackageLicenseUrl>
     <PackageReleaseNotes />
+    <Platforms>AnyCPU;x86;x64</Platforms>
   </PropertyGroup>
 </Project>
