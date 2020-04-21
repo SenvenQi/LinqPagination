@@ -27,7 +27,7 @@
   * 参数
     > pageIndex默认为1
 
-    > pageSize默认为50
+    > pageSize默认为10
 
     > @where 默认为空数组
 
