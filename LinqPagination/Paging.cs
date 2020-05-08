@@ -22,8 +22,8 @@ namespace LinqPagination
         IQueryable<T> IPaging<T>.PagingBy(IQueryable<T> source)
         {
             _source = source;
-            AvailCnt = _source.Count();
             AddFliter(Self);
+            AvailCnt = _source.Count();
             Pagination();
             return _source;
         }
