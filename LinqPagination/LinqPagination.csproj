@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageId>LinqPagination</PackageId>
-    <Version>2.1.1</Version>
+    <Version>2.1.2</Version>
     <Authors>SevenQi</Authors>
     <Description>Linq 分页扩展库,简单易用</Description>
     <Copyright>Copyright © SevenQi 2019</Copyright>
